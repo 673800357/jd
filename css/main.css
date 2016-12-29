@@ -40,13 +40,10 @@ li
 .w
 {    height: 100%;
 	margin: auto;
-	 width: 990px;
+	 width: 1190px;
 	     background-color: rgb(227,228,229);
 }
-.mini-w
-{
-	 width: 990px;
-}
+
 .nav-left
 {    float: left;
 	margin-left: 200px;
@@ -89,7 +86,7 @@ li
 	display: block;
 	width: 190px;
 	height: 170px;
-	top:-15px;
+	top:-32px;
 	z-index: 2;
 	position: absolute;
 	background-color: white;
@@ -205,7 +202,7 @@ li
 	width: 790px;
 	height: 40px;
 	left: 200px;
-	top:78px;
+	top:100px;
 	
 }
 .nav-item-g1,.nav-item-g2,.nav-item-g3
@@ -265,9 +262,10 @@ padding-left: 12px;
     font-size: 14px;
 }
 .fs
-{   position: absolute;/*>????*/
-     margin-top: 15px;
+{   position: relative;/*>????*/
+   
 	width: 100%;
+
 }
 .fs-inner
 {   margin: 0 auto;
@@ -441,6 +439,7 @@ padding-left: 12px;
 .news-tab
 {
 	border-top:1px solid darkgray ;
+	border-bottom:1px solid darkgray ;
 	font-size: 13px;
 	
 }
@@ -462,16 +461,67 @@ padding-left: 12px;
 	color: firebrick;
 }
 .display
-{ 
-	overflow: hidden;
+{    height: 132px;
+	
+	position: relative;
+}
+.display a
+{    
+	
+	color: #666;
+	padding-bottom: 5px;
 }
 .display1
-{    width: 180px;
+{  background-color: white;
+	 top: 10%;
+	  width: 180px;
 	position: absolute;
+	
+	height: 100px;
 }
+
 .display2
-{
+{   
+	background-color: white;
+	top: 10%;
 	width: 180px;
-	display: none;
+	height: 100px;
+	
 position: absolute;	
+}
+.selected
+{
+	z-index: 100;
+	
+}
+.show-selected
+{
+	border-bottom: 2px solid red;
+}
+.service
+{
+	width: 190px;
+	height: 210px;
+}
+.middle-box
+{
+	margin: 0 auto;
+	width: 1190px;
+}
+.box-first
+{
+	padding: 0 20px 0 30px;
+	height: 55px;
+	line-height: 55px;
+	background: url(../img/box-bg.png) no-repeat 0 0;
+	position: relative;
+	
+}
+.count
+{
+	display: inline-block;
+}
+.timer span
+{
+	color: white;
 }

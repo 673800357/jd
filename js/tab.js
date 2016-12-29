@@ -3,9 +3,8 @@
  */
 
 //轮播
-
-    var img=document.querySelectorAll('.slider-main-img li')//大图片
-    var p=document.querySelectorAll('.slider-main-buttom li')//图片下面的小点
+    var img=Array.prototype.slice.call(document.querySelectorAll('.slider-main-img li'),0)//大图片
+    var p= Array.prototype.slice.call(document.querySelectorAll('.slider-main-buttom li'),0)//图片下面的小点
     var color=document.querySelectorAll('.slider-main-buttom li a')//点的背景
     var right=document.querySelector('.next')//左点击
     var left=document.querySelector('.pre')//右点击
@@ -14,24 +13,24 @@
     var select=0;//记录上次选中的位置
      img[0].style.zIndex=100;
      autoPlay(0)
-    for (var i=0;i<img.length;i++)
-     {  
-     	p[i].index=i;
-     	
-     	p[i].onmouseover=function()
+
+  
+     p.forEach((item,index)=>{
+     	item.index=index;
+     	item.onmouseover=()=>
      	{
      		
-     		 showPic(this)
+     		 showPic(item)
      		 clearInterval(timer)
      	}
-     	p[i].onmouseout=function()
+     	item.onmouseout=()=>
      	{
-     		autoPlay(this.index)
+     		autoPlay(item.index)
      	}
-     }
-     
-     
-     left.onclick=function()
+     	
+     })
+      //往左一个图片
+     left.onclick=()=>
       { clearInterval(timer) 
       	if(select==0)
       	            {showPic(p[7]);
@@ -39,7 +38,8 @@
       	   else (showPic(p[select-1]));
       	 
       }
-      right.onclick=function()
+      //往右一个图片
+      right.onclick=()=>
       {
       	 clearInterval(timer)
       	if(select==7)
@@ -49,7 +49,7 @@
       }
       
 function showPic(_this)
-{      for (var i=0;i<8;i++)
+{      for (var i=0;i<img.length;i++)
 	          img[i].style.zIndex=1; 
 	            color[select].className=''
 	          
@@ -57,17 +57,14 @@ function showPic(_this)
 	           img[_this.index].style.zIndex=100;
 	           color[_this.index].className="select"
 	           select=_this.index
-	           
-	               
-	        	
-}
+	               }
 function autoPlay(index)
 {
 	clearInterval(timer)
-	timer=setInterval(function(){
+	timer=setInterval(()=>{
             showPic(p[index])
             index++
-            if (index>=8) index=0
+            if (index>=img.length) index=0
 	},2000)
 }
                          
