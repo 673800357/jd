@@ -300,13 +300,18 @@ padding-left: 12px;
 
  .slider-main-img li
 {
+	opacity: 1;
 	position: absolute;
+	-webkit-transition: z-index .5s linear,opacity .5s linear;
+	
 
  }
-.show
-{
+/*.show
+{    
+	 opacity: 1;
 	z-index: 100;
-}
+	-webkit-transition: z-index 1s ease-in-out ;
+}*/
 .slider-main-buttom
 {
 	left: 50%;
@@ -517,11 +522,21 @@ position: absolute;
 	position: relative;
 	
 }
-.count
+#timer
 {
+	float: left;
 	display: inline-block;
+	
 }
-.timer span
-{
+.daojishi span
+{    
+	
+	color: white;
+	
+}
+.hour,.split,.minute,.second
+{  
+
+	display: inline-block;
 	color: white;
 }
